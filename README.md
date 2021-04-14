@@ -29,7 +29,7 @@ The GITHUB_CLIENT_ID and the GITHUB_CLIENT_SECRET are environment variables that
 
 Now let’s configure our security:
 
-@EnableWebSecurity
+[@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .oauth2Login();
     }
 }
-
+](url)
 
 In the above code, we want every request to be authenticated. We add oauth2Login in order to configure authentication support using OAuth 2.0.
 
