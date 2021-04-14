@@ -56,7 +56,6 @@ Internally, this request is getting handled by OAuth2AuthorizationRequestRedirec
 
 https://github.com/login/oauth/authorize?response_type=code&client_id=<clientId>&scope=read:user&state=<state>&redirect_uri=http://localhost:8080/login/oauth2/code/github
 the above redirect_uri contains the same value we put when we registered our application.
-  
-  
-Conclusion
+
+# Conclusion
 It’s very simple to build an application with “social login” using OAuth 2.0 and Spring Boot.
