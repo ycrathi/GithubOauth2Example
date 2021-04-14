@@ -14,31 +14,34 @@ To enable Spring Security OAuth 2.0, we need to add the following starter:
 
 
 Now, we’ll need to modify our application.yml:
-spring:
-  security:
-   oauth2:
-     client:
-       registration:
-         github:
-           clientId: ${GITHUB_CLIENT_ID}
-           clientSecret: ${GITHUB_CLIENT_SECRET}
-           
+```yaml
+    spring:
+      security:
+       oauth2:
+         client:
+           registration:
+             github:
+               clientId: ${GITHUB_CLIENT_ID}
+               clientSecret: ${GITHUB_CLIENT_SECRET}
+
+```        
 
 The GITHUB_CLIENT_ID and the GITHUB_CLIENT_SECRET are environment variables that hold the values that you get back once you register your application on GitHub (same for Google, Facebook, or any other provider).
 
 
 Now let’s configure our security:
 
-`@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-            .anyRequest().authenticated()
-            .and()
-            .oauth2Login();
+
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .oauth2Login();
+        }
     }
-}`
 
 In the above code, we want every request to be authenticated. We add oauth2Login in order to configure authentication support using OAuth 2.0.
 
