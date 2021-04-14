@@ -21,8 +21,8 @@ Now, we’ll need to modify our application.yml:
          client:
            registration:
              github:
-               clientId: ${GITHUB_CLIENT_ID}
-               clientSecret: ${GITHUB_CLIENT_SECRET}
+               clientId: ${GITHUB_CLIENT_ID} Here you can add your keys
+               clientSecret: ${GITHUB_CLIENT_SECRET} Here you can add your keys
 
 ```        
 
