@@ -29,7 +29,7 @@ The GITHUB_CLIENT_ID and the GITHUB_CLIENT_SECRET are environment variables that
 
 Now let’s configure our security:
 
-[@EnableWebSecurity
+`@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -38,8 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .oauth2Login();
     }
-}
-](url)
+}`
 
 In the above code, we want every request to be authenticated. We add oauth2Login in order to configure authentication support using OAuth 2.0.
 
@@ -51,6 +50,7 @@ When a request is made to localhost:8080, Spring security will try to find an au
 http://localhost:8080/oauth2/authorization/github
 
 Internally, this request is getting handled by OAuth2AuthorizationRequestRedirectFilter, which uses implements doFilterInternal that matches against the /oauth2/authorization/github URI and redirect the request to
+
 https://github.com/login/oauth/authorize?response_type=code&client_id=<clientId>&scope=read:user&state=<state>&redirect_uri=http://localhost:8080/login/oauth2/code/github
 the above redirect_uri contains the same value we put when we registered our application.
   
