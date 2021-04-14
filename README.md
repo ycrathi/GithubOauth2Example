@@ -57,7 +57,9 @@ Internally, this request is getting handled by OAuth2AuthorizationRequestRedirec
 https://github.com/login/oauth/authorize?response_type=code&client_id=<clientId>&scope=read:user&state=<state>&redirect_uri=http://localhost:8080/login/oauth2/code/github
 the above redirect_uri contains the same value we put when we registered our application.
 
-You can call http://localhost:8080/user api and see magic
+
+#You can call http://localhost:8080/user api and see magic
+
 ![image](https://user-images.githubusercontent.com/25124224/114703547-11af4180-9d43-11eb-9edd-ff13066ec1d2.png)
 
 # Conclusion
